@@ -1,0 +1,15 @@
+[
+{
+  "modid": "uberhardcore",
+  "name": "UberHardcore",
+  "description": "More difficult base mobs.",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["ghowden"],
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
