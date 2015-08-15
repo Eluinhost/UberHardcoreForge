@@ -39,5 +39,3 @@ Changes:
 ### Creeper
 
 - Explodes a short time after it's death (even if it died by exploding, gives particle effect warning)
-
-Now a range
