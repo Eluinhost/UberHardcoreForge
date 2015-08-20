@@ -5,6 +5,7 @@ import com.google.common.collect.Lists;
 import gg.uhc.uberhardcore.mobs.chicken.ThrownEggHandler;
 import gg.uhc.uberhardcore.mobs.chicken.UberChicken;
 import gg.uhc.uberhardcore.mobs.creeper.CreeperDeathHandler;
+import gg.uhc.uberhardcore.mobs.rabbit.KillerRabbitSpawnHandler;
 import gg.uhc.uberhardcore.mobs.sheep.UberSheep;
 import gg.uhc.uberhardcore.mobs.skeleton.UberSkeleton;
 import gg.uhc.uberhardcore.mobs.spider.SpiderAIModifier;
@@ -26,7 +27,8 @@ public enum MobOverride {
     CHICKEN(EntityChicken.class, UberChicken.class, new ThrownEggHandler()),
     SPIDER(null, null, new SpiderDeathHandler(), new SpiderAIModifier()),
     SHEEP(EntitySheep.class, UberSheep.class),
-    CREEPER(null, null, new CreeperDeathHandler())
+    CREEPER(null, null, new CreeperDeathHandler()),
+    RABBIT(null, null, new KillerRabbitSpawnHandler())
     ;
 
     public final Class<? extends EntityLiving> toReplace;
