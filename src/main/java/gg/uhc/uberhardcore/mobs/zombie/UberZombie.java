@@ -50,6 +50,8 @@ public class UberZombie extends EntityZombie {
     public UberZombie(World worldIn) {
         super(worldIn);
 
+        this.isImmuneToFire = true;
+
         AIUtil.removeAITasksByClass(tasksToRemove, this.tasks);
         AIUtil.removeAITasksByClass(targetTasksToRemove, this.targetTasks);
 

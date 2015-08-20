@@ -15,6 +15,7 @@ Changes:
 - dont need sight to agro
 - longer agro range
 - don't attack villagers
+- immune to fire
 
 ### Skeleton
 
