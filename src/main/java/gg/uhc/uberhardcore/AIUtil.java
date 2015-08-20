@@ -1,5 +1,6 @@
 package gg.uhc.uberhardcore;
 
+import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Multimap;
 import net.minecraft.entity.EntityList;
@@ -37,6 +38,14 @@ public class AIUtil {
         for (EntityAIBase ai : found) {
             tasks.removeTask(ai);
         }
+    }
+
+    public static void removeAITasksByClass(Class<? extends EntityAIBase> toRemove, EntityAITasks tasks) {
+        Multimap<Integer, Class<? extends EntityAIBase>> map = HashMultimap.create(1, 1);
+
+        map.put(null, toRemove);
+
+        removeAITasksByClass(map, tasks);
     }
 
     /**
