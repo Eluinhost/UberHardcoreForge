@@ -18,7 +18,7 @@ import java.util.Random;
 public class UberSheep extends EntitySheep {
 
     static {
-        EntitySpawnPlacementRegistry.setPlacementType(UberChicken.class, SpawnPlacementType.ON_GROUND);
+        EntitySpawnPlacementRegistry.setPlacementType(UberSheep.class, SpawnPlacementType.ON_GROUND);
     }
 
     public UberSheep(World worldIn) {
