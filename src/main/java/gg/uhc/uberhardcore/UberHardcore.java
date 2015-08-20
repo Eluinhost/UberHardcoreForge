@@ -22,7 +22,7 @@ public class UberHardcore {
     @Mod.Instance
     public static UberHardcore INSTANCE;
 
-    public static boolean inDebug = true;
+    public static boolean inDebug = false;
 
     protected TaskScheduler scheduler;
 
