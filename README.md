@@ -46,3 +46,7 @@ Changes:
 ### Rabbit
 
 - 1% chance to spawn as a killer rabbit
+
+## Known problems
+
+Zombies riding chickens *shouldnt* work, as well as Skeleton jockeys
