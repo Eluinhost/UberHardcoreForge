@@ -1,6 +1,6 @@
-package gg.uhc.uberhardcore.events;
+package gg.uhc.uberhardcore.mobs.zombie;
 
-import gg.uhc.uberhardcore.mobs.UberZombie;
+import gg.uhc.uberhardcore.mobs.zombie.UberZombie;
 import net.minecraftforge.event.entity.living.ZombieEvent;
 import net.minecraftforge.fml.common.eventhandler.Event;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;

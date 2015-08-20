@@ -2,11 +2,16 @@ package gg.uhc.uberhardcore;
 
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
-import gg.uhc.uberhardcore.events.*;
-import gg.uhc.uberhardcore.mobs.UberChicken;
-import gg.uhc.uberhardcore.mobs.UberSheep;
-import gg.uhc.uberhardcore.mobs.UberSkeleton;
-import gg.uhc.uberhardcore.mobs.UberZombie;
+import gg.uhc.uberhardcore.mobs.chicken.ThrownEggHandler;
+import gg.uhc.uberhardcore.mobs.chicken.UberChicken;
+import gg.uhc.uberhardcore.mobs.creeper.CreeperDeathHandler;
+import gg.uhc.uberhardcore.mobs.sheep.UberSheep;
+import gg.uhc.uberhardcore.mobs.skeleton.UberSkeleton;
+import gg.uhc.uberhardcore.mobs.spider.SpiderAIModifier;
+import gg.uhc.uberhardcore.mobs.spider.SpiderDeathHandler;
+import gg.uhc.uberhardcore.mobs.zombie.UberZombie;
+import gg.uhc.uberhardcore.mobs.zombie.ZombieSeigeHandler;
+import gg.uhc.uberhardcore.mobs.zombie.ZombieSummonHandler;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.monster.EntitySkeleton;
 import net.minecraft.entity.monster.EntityZombie;
@@ -33,6 +38,15 @@ public enum MobOverride {
      */
     public void initialize() {}
 
+    /**
+     * A mob overide
+     *
+     * Keep toReplace and replaceWith null if no Entity override is required (if just events are good enough)
+     *
+     * @param toReplace the original Entity class to replace
+     * @param replaceWith the override class to reaplce with
+     * @param handers a list of object to register for events
+     */
     MobOverride(Class<? extends EntityLiving> toReplace, Class<? extends EntityLiving> replaceWith, Object... handers) {
         this.toReplace = toReplace;
         this.replaceWith = replaceWith;
@@ -41,11 +55,5 @@ public enum MobOverride {
         temp.add(new InvalidSpawnHandler(toReplace));
 
         this.handlers = ImmutableList.copyOf(handers);
-    }
-
-    MobOverride(Class<? extends EntityLiving> toReplace, Class<? extends EntityLiving> replaceWith) {
-        this.toReplace = toReplace;
-        this.replaceWith = replaceWith;
-        this.handlers = Lists.newArrayListWithCapacity(0);
     }
 }

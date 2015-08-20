@@ -1,4 +1,4 @@
-package gg.uhc.uberhardcore.mobs;
+package gg.uhc.uberhardcore.mobs.skeleton;
 
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
@@ -19,6 +19,13 @@ import net.minecraft.entity.monster.EntityZombie;
 import net.minecraft.entity.projectile.EntityArrow;
 import net.minecraft.world.World;
 
+/**
+ * A skeleton with:
+ *
+ * 30% chance on spawn to be wither skeleton (shoots flame arrows)
+ * increased agro range, attack range and accuracy
+ * increased attack speed at max range (min range unchanged)
+ */
 public class UberSkeleton extends EntitySkeleton {
 
     static {

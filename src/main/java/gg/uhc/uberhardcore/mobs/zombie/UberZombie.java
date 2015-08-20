@@ -1,4 +1,4 @@
-package gg.uhc.uberhardcore.mobs;
+package gg.uhc.uberhardcore.mobs.zombie;
 
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
@@ -16,6 +16,15 @@ import net.minecraft.util.BlockPos;
 import net.minecraft.world.EnumDifficulty;
 import net.minecraft.world.World;
 
+/**
+ * Spawns a zombie with:
+ *
+ * increased agro/chase range
+ * no villager agro
+ * slow wandering
+ * faster agro speed
+ * spider-like leap attack
+ */
 public class UberZombie extends EntityZombie {
 
     protected static final Multimap<Integer, Class<? extends EntityAIBase>> tasksToRemove = HashMultimap.create();
@@ -61,6 +70,7 @@ public class UberZombie extends EntityZombie {
 
     // copy/pasted from EntityZombie
     // changed EntityZombie -> UberZombie
+    // stops EntityZombie being created on villager conversion
     public void onKillEntity(EntityLivingBase entityLivingIn)
     {
         super.onKillEntity(entityLivingIn);

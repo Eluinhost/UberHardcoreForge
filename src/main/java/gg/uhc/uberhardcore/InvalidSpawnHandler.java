@@ -1,4 +1,4 @@
-package gg.uhc.uberhardcore.events;
+package gg.uhc.uberhardcore;
 
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.util.BlockPos;

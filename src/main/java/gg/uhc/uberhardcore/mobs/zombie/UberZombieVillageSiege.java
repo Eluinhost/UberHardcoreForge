@@ -1,6 +1,5 @@
-package gg.uhc.uberhardcore.events;
+package gg.uhc.uberhardcore.mobs.zombie;
 
-import gg.uhc.uberhardcore.mobs.UberZombie;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.IEntityLivingData;
 import net.minecraft.entity.monster.EntityZombie;

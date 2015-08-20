@@ -1,10 +1,9 @@
-package gg.uhc.uberhardcore.mobs;
+package gg.uhc.uberhardcore.mobs.chicken;
 
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
 import gg.uhc.uberhardcore.AIUtil;
 import gg.uhc.uberhardcore.UberHardcore;
-import gg.uhc.uberhardcore.entities.UberChickenEgg;
 import net.minecraft.entity.EntityAgeable;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.EntitySpawnPlacementRegistry;
@@ -16,6 +15,9 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
 
+/**
+ * A chicken that agros on players by throwing eggs
+ */
 public class UberChicken extends EntityChicken implements IRangedAttackMob {
 
     static {
@@ -41,12 +43,14 @@ public class UberChicken extends EntityChicken implements IRangedAttackMob {
             this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityZombie.class, false));
     }
 
+    // override creating a child to stop an EntityChicken being spawned
     @Override
     public EntityChicken createChild(EntityAgeable ageable)
     {
         return new UberChicken(this.worldObj);
     }
 
+    // implemented based on EntitySnowman version, replaced with UberChickenEgg
     @Override
     public void attackEntityWithRangedAttack(EntityLivingBase p_82196_1_, float p_82196_2_) {
         UberChickenEgg entityEgg = new UberChickenEgg(this.worldObj, this);

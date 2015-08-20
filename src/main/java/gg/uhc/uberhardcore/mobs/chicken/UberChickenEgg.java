@@ -1,6 +1,5 @@
-package gg.uhc.uberhardcore.entities;
+package gg.uhc.uberhardcore.mobs.chicken;
 
-import gg.uhc.uberhardcore.mobs.UberChicken;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.projectile.EntityEgg;
 import net.minecraft.init.Items;
@@ -10,6 +9,11 @@ import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.world.World;
 
+/**
+ * Used to replace an EntityEgg with a version that spawns an UberChicken instead.
+ *
+ * Also reduces rates of babies spawning from eggs too to avoid overpopulation
+ */
 public class UberChickenEgg extends EntityEgg {
 
     public UberChickenEgg(World worldIn, EntityLivingBase p_i1780_2_) {

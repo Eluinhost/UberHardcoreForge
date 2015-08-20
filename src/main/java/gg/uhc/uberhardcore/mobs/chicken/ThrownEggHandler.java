@@ -1,12 +1,16 @@
-package gg.uhc.uberhardcore.events;
+package gg.uhc.uberhardcore.mobs.chicken;
 
-import gg.uhc.uberhardcore.entities.UberChickenEgg;
 import net.minecraft.entity.projectile.EntityEgg;
 import net.minecraftforge.event.entity.EntityJoinWorldEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 public class ThrownEggHandler {
 
+    /**
+     * Handles the throwing of eggs to replace them with UberChickenEgg instances that spawn the correct mob
+     *
+     * @param event join world event
+     */
     @SubscribeEvent
     public void onSummonEvent(EntityJoinWorldEvent event) {
         // only run for eggs

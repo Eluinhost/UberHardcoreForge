@@ -1,4 +1,4 @@
-package gg.uhc.uberhardcore.events;
+package gg.uhc.uberhardcore.mobs.creeper;
 
 import gg.uhc.uberhardcore.UberHardcore;
 import gg.uhc.uberhardcore.tasks.Task;
@@ -11,6 +11,9 @@ import net.minecraft.world.WorldServer;
 import net.minecraftforge.event.entity.living.LivingDeathEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
+/**
+ * Causes creepers to explode again after their death
+ */
 public class CreeperDeathHandler {
 
     @SubscribeEvent

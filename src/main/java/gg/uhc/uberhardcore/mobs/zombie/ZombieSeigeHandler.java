@@ -1,13 +1,12 @@
-package gg.uhc.uberhardcore.events;
+package gg.uhc.uberhardcore.mobs.zombie;
 
 import net.minecraft.world.WorldServer;
 import net.minecraftforge.event.world.WorldEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 /**
- * Project: UberHardcore
- * Package: gg.uhc.uberhardcore.events
- * Created by Eluinhost on 14:51 12/08/2015 2015.
+ * Handles loading of worlds to replace the Village seige mechanics to stop EntityZombie being spawned instead of
+ * UberZombie
  */
 public class ZombieSeigeHandler {
 

@@ -1,4 +1,4 @@
-package gg.uhc.uberhardcore.mobs;
+package gg.uhc.uberhardcore.mobs.sheep;
 
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
@@ -15,6 +15,9 @@ import net.minecraft.world.World;
 
 import java.util.Random;
 
+/**
+ * A sheep designed to float around like a derp
+ */
 public class UberSheep extends EntitySheep {
 
     static {
@@ -36,6 +39,7 @@ public class UberSheep extends EntitySheep {
         this.tasks.addTask(5, new AIRandomFly());
     }
 
+    // override createBabySheep to make sure the baby is not an EntitySheep
     @Override
     public EntitySheep createBabySheep(EntityAgeable ageable)
     {

@@ -1,4 +1,4 @@
-package gg.uhc.uberhardcore.events;
+package gg.uhc.uberhardcore.mobs.spider;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.item.EntityFallingBlock;
@@ -11,6 +11,9 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 import java.util.Random;
 
+/**
+ * Modifies spider death to explode into webs + blood
+ */
 public class SpiderDeathHandler {
 
     protected static final Random random = new Random();
@@ -24,11 +27,19 @@ public class SpiderDeathHandler {
             spawnRandomWeb(event.entity);
         }
 
+        // spawn 30 random particle effects
         for (int i = 0; i < 30; i++) {
             spawnRandomRedstoneParticle(event.entity);
         }
     }
 
+    /**
+     * Spawns a redstone particle effect at the given entity.
+     *
+     * Adds a random positional offset from the given entity (1 block each direction max)
+     *
+     * @param entity location to spawn
+     */
     protected static void spawnRandomRedstoneParticle(Entity entity) {
         ((WorldServer) entity.worldObj).spawnParticle(
                 EnumParticleTypes.REDSTONE,
@@ -44,6 +55,14 @@ public class SpiderDeathHandler {
         );
     }
 
+    /**
+     * Spawns random falling block cobweb.
+     *
+     * Takes initial 50% momentum from given entity, then adds += .2 to each direction. Vertical momentum is guarenteed
+     * to be at least .25
+     *
+     * @param entity location to spawn
+     */
     protected static void spawnRandomWeb(Entity entity) {
         EntityFallingBlock block = new EntityFallingBlock(entity.worldObj, entity.posX, entity.posY, entity.posZ, Blocks.web.getDefaultState());
 

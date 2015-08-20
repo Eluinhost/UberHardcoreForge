@@ -1,4 +1,4 @@
-package gg.uhc.uberhardcore.events;
+package gg.uhc.uberhardcore.mobs.spider;
 
 import gg.uhc.uberhardcore.AIUtil;
 import gg.uhc.uberhardcore.UberHardcore;
@@ -11,6 +11,9 @@ import net.minecraft.entity.monster.EntitySpider;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraftforge.event.entity.EntityJoinWorldEvent;
 
+/**
+ * Modifies spider AI to attack during the daytime
+ */
 public class SpiderAIModifier {
 
     public void on(EntityJoinWorldEvent event) {
