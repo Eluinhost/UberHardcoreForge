@@ -26,6 +26,7 @@ Changes:
 ### Spider
 
 - Attack no matter the light level
+- Explodes webs (as falling sand entities) and shows blood particles on death
 
 ### Sheep
 

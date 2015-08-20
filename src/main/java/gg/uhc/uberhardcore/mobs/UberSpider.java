@@ -16,7 +16,6 @@ public class UberSpider extends EntitySpider {
         EntitySpawnPlacementRegistry.setPlacementType(UberSpider.class, SpawnPlacementType.ON_GROUND);
     }
 
-    // TODO add something more than just daytime attacks?
     public UberSpider(World worldIn) {
         super(worldIn);
 

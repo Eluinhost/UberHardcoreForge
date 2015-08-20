@@ -17,7 +17,7 @@ public enum MobOverride {
     ZOMBIE(EntityZombie.class, UberZombie.class, new ZombieSummonHandler(), new ZombieSeigeHandler()),
     SKELETON(EntitySkeleton.class, UberSkeleton.class),
     CHICKEN(EntityChicken.class, UberChicken.class, new ThrownEggHandler()),
-    SPIDER(EntitySpider.class, UberSpider.class),
+    SPIDER(EntitySpider.class, UberSpider.class, new SpiderDeathHandler()),
     SHEEP(EntitySheep.class, UberSheep.class),
     CREEPER(null, null, new CreeperDeathHandler())
     ;
