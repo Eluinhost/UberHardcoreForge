@@ -4,6 +4,7 @@ import gg.uhc.uberhardcore.AIUtil;
 import gg.uhc.uberhardcore.UberHardcore;
 import net.minecraft.entity.EntityCreature;
 import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAIAttackOnCollide;
 import net.minecraft.entity.ai.EntityAINearestAttackableTarget;
 import net.minecraft.entity.monster.EntitySkeleton;
@@ -28,6 +29,9 @@ public class SpiderAIModifier {
         // replace with non-daylight dependant attacks/targetting on players only
         spider.tasks.addTask(4, new AISpiderAttackIgnoresSunlight(spider, EntityPlayer.class));
         spider.targetTasks.addTask(2, new EntityAINearestAttackableTarget(spider, EntityPlayer.class, true));
+
+        // give a movement speed buff
+        spider.getAttributeMap().getAttributeInstance(SharedMonsterAttributes.movementSpeed).setBaseValue(0.45D);
 
         if (UberHardcore.inDebug) {
             spider.tasks.addTask(4, new AISpiderAttackIgnoresSunlight(spider, EntitySkeleton.class));

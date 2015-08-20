@@ -27,6 +27,7 @@ Changes:
 
 - Attack no matter the light level
 - Explodes webs (as falling sand entities) and shows blood particles on death
+- 50% base movement speed buff
 
 ### Sheep
 
