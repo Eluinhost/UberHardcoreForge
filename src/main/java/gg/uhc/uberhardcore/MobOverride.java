@@ -1,6 +1,7 @@
 package gg.uhc.uberhardcore;
 
 import com.google.common.collect.ImmutableList;
+import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
 import gg.uhc.uberhardcore.mobs.chicken.ThrownEggHandler;
 import gg.uhc.uberhardcore.mobs.chicken.UberChicken;
@@ -82,6 +83,8 @@ public enum MobOverride {
             biomeSpawnLists.add(biome.getSpawnableList(EnumCreatureType.MONSTER));
         }
 
+        Iterable<BiomeGenBase.SpawnListEntry> entries = Iterables.concat(biomeSpawnLists);
+
         // run all of the overrides
         for (MobOverride mobOverride : MobOverride.values()) {
             if (!configuration.get("overrides", mobOverride.name(), true).getBoolean()) return;
@@ -96,19 +99,10 @@ public enum MobOverride {
                 overwriteVanillaMob(mobOverride.toReplace, mobOverride.replaceWith);
 
                 // replace all classes within the spawn lists
-                for (List<BiomeGenBase.SpawnListEntry> spawnList : biomeSpawnLists) {
-                    List<BiomeGenBase.SpawnListEntry> toRemove = Lists.newLinkedList();
-                    List<BiomeGenBase.SpawnListEntry> toAdd = Lists.newLinkedList();
-
-                    for (BiomeGenBase.SpawnListEntry entry : spawnList) {
-                        if (entry.entityClass == mobOverride.toReplace) {
-                            toRemove.add(entry);
-                            toAdd.add(new BiomeGenBase.SpawnListEntry(mobOverride.replaceWith, entry.itemWeight, entry.minGroupCount, entry.maxGroupCount));
-                        }
+                for (BiomeGenBase.SpawnListEntry entry : entries) {
+                    if (entry.entityClass == mobOverride.toReplace) {
+                        entry.entityClass = mobOverride.replaceWith;
                     }
-
-                    spawnList.removeAll(toRemove);
-                    spawnList.addAll(toAdd);
                 }
             }
         }
